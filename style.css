@@ -1,0 +1,725 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+:root {
+  --color1: #8e7bef;
+  --color2: #5d3bef;
+  --color3: #f9f6ff;
+  --color4: #222222;
+  --color5: #423f40;
+  --color6: #ffffff;
+  --color7: #f9f5f2;
+  --color8: #2f43e4;
+  --color9: #e3e3e3;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* En esta seccion creo toda la estructura de la paguina */
+
+.page_structure {
+  max-width: 1024px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: var(--color6);
+
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "article"
+    "portafolio"
+    "footer";
+}
+
+/* Aqui comienzo a diseñar la parte del header compuesto por el nav y el post */
+/* menu */
+
+/* -------------------------------------------------------------------------------- */
+
+.header {
+  grid-area: header;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color6);
+}
+
+/* menu */
+
+.conteiner_menu {
+  background-color: var(--color6);
+  height: 10vh;
+  padding: 0 1rem;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.conteiner_menu_items {
+  position: fixed;
+  top: 10vh;
+  background-color: var(--color6);
+  left: 0;
+  width: 50%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  transform: translateX(-150%);
+  transition: transform 0.5s;
+}
+
+.menu_show {
+  transform: translateX(0);
+}
+
+.bx-menu {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .bx-menu {
+    display: none;
+  }
+
+  .conteiner_menu_items {
+    position: static;
+    width: auto;
+    height: auto;
+    margin-right: 16rem;
+    background-color: var(--color6);
+    flex-direction: row;
+    transform: translateX(0);
+  }
+}
+
+/* post */
+
+.conteiner_post {
+  width: 100%;
+  height: 90vh;
+  margin-top: 10vh;
+  background-color: lightgreen;
+
+  display: grid;
+  grid-template-areas:
+    "conteiner_post_photo"
+    "conteiner_post_title";
+
+  grid-template-rows: 1.2fr 1fr;
+}
+
+/* post - photo */
+
+.conteiner_post_photo {
+  grid-area: conteiner_post_photo;
+  background-color: var(--color6);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photo_mobile {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.photo_desktop {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* post - title */
+
+.conteiner_post_title {
+  grid-area: conteiner_post_title;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteiner_post_title_second {
+  width: 100%;
+  height: 90%;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.conteiner_post_title_second h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.conteiner_post_title_second p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.conteiner_post_title_social {
+  width: 100%;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.box_social_media {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color1);
+  gap: 1rem;
+  border-radius: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_social_media:hover{
+  background-color: black;
+}
+
+.button_contact {
+  width: 80%;
+  height: 40px;
+  margin-top: 0.5rem;
+  border: none;
+  background-color: var(--color2);
+  color: var(--color6);
+  cursor: pointer;
+}
+
+.button_contact:hover {
+  background-color: black;
+  color: white;
+}
+
+/* -------------------------------------------------------------- */
+
+.main {
+  grid-area: main;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* seccion acerca de mi */
+
+.conteiner_over_me {
+  width: 90%;
+  height: 50%;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.conteiner_over_me h2 {
+  font-size: 24px;
+}
+
+.conteiner_over_me p {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Section mis habilidades */
+
+.conteiner_skills {
+  width: 100%;
+  height: 50%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteiner_skills_title {
+  width: 100%;
+  height: 20%;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteiner_skills_cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.conteiner_skills_cards_box {
+  width: 90%;
+  height: 100%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.box_cards {
+  width: 150px;
+  height: 130px;
+  background-color: var(--color9);
+  gap: 2rem;
+}
+
+.box_cards h3 {
+  font-size: 15px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.box_cards p {
+  font-size: 10px;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+/* Experiencia */
+
+.article {
+  grid-area: article;
+  width: 100%;
+  height: 50vh;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.experience_title {
+  width: 100%;
+  height: 25%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience_title h2 {
+  font-size: 24px;
+}
+
+.conteiner_experience {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background-color: var(--color6);
+}
+
+.conteiner_experience_empresa {
+  background-color: var(--color6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.logo_empresa {
+  width: 70px;
+  height: 100px;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_empresas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Seccion de mi portafolio */
+
+.portafolio {
+  grid-area: portafolio;
+  height: 155vh;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: column;
+}
+
+.conteiner_title_portafolio {
+  height: 10%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteiner_img_portafolio {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color6);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.img_portafolio {
+  background-color: var(--color6);
+}
+
+/* footer */
+
+.footer {
+  grid-area: footer;
+  width: 100%;
+  height: 75vh;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_contac {
+  width: 100%;
+  height: 10%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_contac h2 {
+  margin-top: 2rem;
+}
+.footer_info_contact {
+  width: 100%;
+  height: 75%;
+  background-color: var(--color6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer_info {
+  width: 170px;
+  height: 170px;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_img_contact {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_info {
+  margin-top: 1rem;
+}
+
+.link_github {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+ 
+
+  .conteiner_menu_items a {
+    font-size: 1.2rem;
+    color: black;
+  }
+
+  .conteiner_menu_items a:hover {
+    color: var(--color2);
+  }
+
+  .conteiner_post {
+    width: 100%;
+    height: 100vh;
+    background-color: lightgreen;
+
+    display: grid;
+    grid-template-areas: "conteiner_post_photo conteiner_post_title";
+
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  /* post - photo */
+
+  .conteiner_post_photo {
+    grid-area: conteiner_post_photo;
+    background-color: var(--color6);
+  }
+
+  .photo_mobile {
+    display: none;
+  }
+
+  .conteiner_photo_desktop {
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/Imágenes/Vector.png);
+    background-position: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo_desktop {
+    display: block;
+    width: 75%;
+    height: 70%;
+    margin-bottom: 6rem;
+  }
+
+  .conteiner_post_title {
+    grid-area: conteiner_post_title;
+    background-color: var(--color6);
+  }
+
+  /* post - title */
+
+  .conteiner_post_title_second {
+    width: 90%;
+    height: 90%;
+    background-color: var(--color6);
+    gap: 3rem;
+  }
+
+  .conteiner_post_title_second h1 {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 700;
+  }
+
+  .conteiner_post_title_second p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  .conteiner_post_title_social {
+    width: 100%;
+    background-color: var(--color6);
+    gap: 3rem;
+  }
+
+  .button_contact {
+    width: 90%;
+    height: 40px;
+    margin-top: 2rem;
+    border: none;
+    background-color: var(--color2);
+    color: var(--color6);
+  }
+
+  /* main over me */
+
+  .conteiner_over_me h2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .conteiner_over_me p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 4rem;
+  }
+
+  /* my skills */
+
+  .conteiner_skills_title h2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .conteiner_skills_cards {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .conteiner_skills_cards_box {
+    width: 90%;
+    height: 100%;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    margin-top: 5rem;
+  }
+
+  .box_cards {
+    width: 150px;
+    height: 130px;
+    background-color: var(--color9);
+  }
+
+  .experience_title h2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .conteiner_experience {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+
+  .portafolio {
+    grid-area: portafolio;
+    height: 100vh;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .conteiner_title_portafolio h2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .conteiner_img_portafolio {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color6);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--color6);
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_info_contact {
+    width: 100%;
+    height: 75%;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .footer_contac {
+    width: 100%;
+    height: 20%;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer_contac h2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+}
